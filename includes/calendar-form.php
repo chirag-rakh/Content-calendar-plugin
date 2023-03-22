@@ -8,9 +8,9 @@
 </head>
 <body>
     <section>
-        <form action="#">
+        <form method="post">
             Date: <input type="date" name="date" required>
-            Occasion: <input type="text" name="occasion" required>
+            Occasion: <input type="text" name="occassion" required>
             Post Title: <input type="text" name="post_title" required>
             Author: 
             <select name="author" id="author" required>
@@ -24,7 +24,8 @@
                         }
                     ?>
                 </select>
-            Reviewer: <select name="reviewer">
+            Reviewer: 
+            <select name="reviewer">
             <option value="">Select Reviewer</option>
                     <?php
                         $users = get_users( array(
@@ -36,7 +37,9 @@
                     ?>
                 </select>
             </select>
-            <input type="submit" value="Enter">
+            <div class="btn">
+                <?php submit_button( 'Schedule Post' ); ?>
+            </div>
         </form>
     </section>    
 </body>
