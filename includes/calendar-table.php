@@ -7,7 +7,6 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Table</h1>
     <?php
     function print_schedule() {
     ?>
@@ -21,7 +20,7 @@
 
     $results = $wpdb->get_results("SELECT * FROM $table_name WHERE date >= DATE( NOW() ) ORDER BY date");
 
-    echo '<table id="upcoming-table" >';
+    echo '<table id="table" >';
     echo '<thead><tr><th>ID</th><th>Date</th><th>Occasion</th><th>Post Title</th><th>Author</th><th>Reviewer</th></tr></thead>';
     foreach ( $results as $row ) {
         echo '<tr>';
@@ -45,7 +44,7 @@
 
     $data = $wpdb->get_results("SELECT * FROM $table_name WHERE date < DATE(NOW()) ORDER BY date DESC");
 
-    echo '<table id="upcoming-table">';
+    echo '<table id="table">';
     echo '<thead><tr><th>ID</th><th>Date</th><th>Occasion</th><th>Post Title</th><th>Author</th><th>Reviewer</th></tr></thead>';
     foreach ($data as $row) {
         echo '<tr>';

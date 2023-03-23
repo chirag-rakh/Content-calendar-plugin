@@ -46,5 +46,11 @@ register_activation_hook( __FILE__, 'table_creation' );
 // Insert data into table and display
 include ( WPPLUGIN_DIR . 'includes/database.php' );
 
+function content_calendar_script(){
+//Enqueue css style to the file
+wp_enqueue_style( 'style-css', WPPLUGIN_URL . 'includes/style.css' );
+}
+
+add_action( 'admin_enqueue_scripts', 'content_calendar_script' )
 
 ?>

@@ -7,25 +7,43 @@
     <title>Document</title>
 </head>
 <body>
-    <section>
+    <div class="form-header"><p>Enter Event Details</p></div>
+    
+    <div class="form-box">
         <form method="post">
-            Date: <input type="date" name="date" required>
-            Occasion: <input type="text" name="occassion" required>
-            Post Title: <input type="text" name="post_title" required>
-            Author: 
-            <select name="author" id="author" required>
-            <option value="">Select User</option>
-                    <?php
-                        $users = get_users( array(
-                            'fields' =>array( 'ID', 'display_name' )
-                        ) );
-                        foreach ($users as $user) {
-                            echo '<option value="' . $user->ID . '">'. $user->display_name . '</option>';
-                        }
-                    ?>
-                </select>
-            Reviewer: 
-            <select name="reviewer">
+            <div class="row">
+                
+			    <span id=1>
+                    <input type="text" name="occassion" placeholder="Enter Occasion" required>
+                </span>
+
+                <span id=1>
+                    <input type="text" name="post_title" placeholder="Enter Post Title" required>
+                </span>
+
+			</div>
+
+            <div class="row">
+                <span id=1>
+                    <input type="date" name="date" required>
+                </span>
+
+                <span id=1>
+                    <select name="author" id="author" required>
+                        <option value="">Select User</option>
+                                <?php
+                                    $users = get_users( array(
+                                        'fields' =>array( 'ID', 'display_name' )
+                                    ) );
+                                    foreach ($users as $user) {
+                                        echo '<option value="' . $user->ID . '">'. $user->display_name . '</option>';
+                                    }
+                                ?>
+                    </select>
+                </span> 
+                
+                <span id="1">
+                <select name="reviewer" id="reviewer">
             <option value="">Select Reviewer</option>
                     <?php
                         $users = get_users( array(
@@ -36,11 +54,12 @@
                         }
                     ?>
                 </select>
-            </select>
+                </span>
+			</div>
             <div class="btn">
                 <?php submit_button( 'Schedule Post' ); ?>
             </div>
         </form>
-    </section>    
+    </div>    
 </body>
 </html>

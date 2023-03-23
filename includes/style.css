@@ -1,0 +1,184 @@
+.plugin-title,
+.tab-title {
+  text-align: center;
+  font-size: 32px;
+  margin: 50px 0px;
+}
+
+#table {
+  border-collapse: collapse;
+  text-align: center;
+  width: 95%;
+}
+
+#table th {
+  background-color: #222222;
+  color: white;
+  text-transform: uppercase;
+}
+
+#table th,
+#table td {
+  padding: 8px;
+  font-size: 18px;
+}
+
+#table tr {
+  border-bottom: 1px solid #222;
+}
+
+/* Form Header */
+.form-header p{
+  margin-top: 0%;
+  text-align: center;
+  font-size: 2rem;  
+}
+
+/*      Form Box      */
+
+.form-box {
+	width: 90%;
+	height: fit-content;
+	background: #15001E;
+	color: #DBC2E6;
+	top: 15%;
+  margin-inline: auto;
+	padding: 70px 30px;
+}
+
+.row{
+  display: flex;
+  justify-content: space-around;
+}
+
+
+.form-box input{
+	width: 100%;
+  margin: 30px 50px;
+}
+
+select#author, select#reviewer{
+  width: 100%;
+  margin: 30px 50px;
+  background-color: #9dff00;
+  color: rgb(255, 0, 0);
+}
+
+select#author option:hover{
+  color: red;
+}
+
+input::placeholder{
+  color:rgb(194, 194, 194);
+  padding-left: 10px;
+}
+
+.form-box input[type="text"], select#author, select#reviewer, input[type="date"]
+{
+	border: none;
+	border-bottom: 1px solid #DBC2E6;
+	background: transparent;
+  text-decoration: none;
+	outline: none;
+	height: 40px;
+	color: #f5f5f5;
+	font-size: 16px;
+}
+
+.btn{
+  display: flex;
+  justify-content: center;
+  padding: 2px 10px;
+}
+
+.form-box input[type="submit"]
+{
+  margin: auto;
+  padding: 0px 40px;
+	border: none;
+	outline: none;
+	height: 40px;
+  width: fit-content;
+	background: #553861;
+	color: #fff;
+	font-size: 18px;
+	border-radius: 20px;
+  transition: background-color 450ms ease-in-out;
+}
+
+.form-box input[type="submit"]:hover
+{
+	cursor: pointer;
+	background: #fff;
+	color: #553861;
+}
+
+@media screen and (max-width: 1380px){
+
+  .form-box input{
+    width: 50%;
+    justify-self: center;
+  }
+
+  .row{
+    display: flex;
+    flex-direction: column;
+  }
+
+  span{
+    display: flex;
+    justify-content: center;
+  }
+}
+
+
+@media screen and (max-width: 600px) {
+  
+  .form-box input{
+    width: 90%;
+    justify-self: center;
+  }
+
+  #table thead {
+    display: none;
+  }
+
+  #table td {
+    display: block;
+  }
+
+  #table td:first-child {
+    background-color: #222;
+    color: #fff;
+    text-align: center;
+  }
+
+  #table td:nth-child(2)::before {
+    content: "Date";
+  }
+
+  #table td:nth-child(3)::before {
+    content: "Occasion";
+  }
+
+  #table td:nth-child(4)::before {
+    content: "Post Title";
+  }
+
+  #table td:nth-child(5)::before {
+    content: "Author";
+  }
+  #table td:nth-child(6)::before {
+    content: "Reviewer";
+  }
+
+  #table td {
+    text-align: right;
+  }
+
+  #table td::before {
+    float: left;
+    margin-right: 10px;
+    font-weight: bold;
+  }
+}
